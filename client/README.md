@@ -1,14 +1,10 @@
 <div align="center">
-  <h1><img src="https://project-management-gs.vercel.app/favicon.ico" width="20" height="20" alt="project-management Favicon">
-   project-management</h1>
-  <p>
-    An open-source project management platform built with ReactJS and Tailwind CSS.
-  </p>
-  <p>
-    <a href="https://github.com/GreatStackDev/project-management/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/GreatStackDev/project-management?style=for-the-badge" alt="License"></a>
-    <a href="https://github.com/GreatStackDev/project-management/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge" alt="PRs Welcome"></a>
-    <a href="https://github.com/GreatStackDev/project-management/issues"><img src="https://img.shields.io/github/issues/GreatStackDev/project-management?style=for-the-badge" alt="GitHub issues"></a>
-  </p>
+
+# 🚀 Project Management System
+
+A full-stack, scalable project management platform built using modern web technologies.  
+Designed to manage workspaces, projects, tasks, and team collaboration efficiently.
+
 </div>
 
 ---
@@ -17,59 +13,70 @@
 
 - [✨ Features](#-features)
 - [🛠️ Tech Stack](#-tech-stack)
+- [⚙️ Architecture](#️-architecture)
 - [🚀 Getting Started](#-getting-started)
-- [🤝 Contributing](#-contributing)
+- [🌐 Deployment](#-deployment)
+- [📌 Highlights](#-highlights)
 - [📜 License](#-license)
 
 ---
 
-## 📝 Features <a name="-features"></a>
+## ✨ Features
 
-- **Multiple Workspaces:** Allow multiple workspaces to be created, each with its own set of projects, tasks, and members.
-- **Project Management:** Manage projects, tasks, and team members.
-- **Analytics:** View project analytics, including progress, completion rate, and team size.
-- **Task Management:** Assign tasks to team members, set due dates, and track task status.
-- **User Management:** Invite team members, manage user roles, and view user activity.
+- 🔹 **Workspace Management**
+  - Create multiple workspaces
+  - Role-based access (Admin / Member)
+  - Manage team members
 
-## 🛠️ Tech Stack <a name="-tech-stack"></a>
+- 🔹 **Authentication & User Sync**
+  - Secure authentication using Clerk
+  - Automatic user sync with database
+  - Handles user create/update/delete events
 
-- **Framework:** ReactJS
-- **Styling:** Tailwind CSS
-- **UI Components:** Lucide React for icons
-- **State Management:** Redux Toolkit
+- 🔹 **Project & Task Management**
+  - Create and manage projects
+  - Assign tasks to users
+  - Track project progress
 
-## 🚀 Getting Started <a name="-getting-started"></a>
+- 🔹 **Event-Driven Backend**
+  - Background processing using Inngest
+  - Clerk webhook integration
+  - Reliable async workflows
 
-First, install the dependencies. We recommend using `npm` for this project.
-
-```bash
-npm install
-```
-
-Then, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
-
-You can start editing the page by modifying `src/App.jsx`. The page auto-updates as you edit the file.
+- 🔹 **Database Management**
+  - Prisma ORM for efficient queries
+  - PostgreSQL (Neon DB)
 
 ---
 
-## 🤝 Contributing <a name="-contributing"></a>
+## 🛠️ Tech Stack
 
-We welcome contributions! Please see our [CONTRIBUTING.md](./CONTRIBUTING.md) for more details on how to get started.
+### Frontend
+- React.js
+- Redux Toolkit
+- Tailwind CSS
+
+### Backend
+- Node.js
+- Express.js
+- Prisma ORM
+
+### Database
+- PostgreSQL (Neon)
+
+### Authentication
+- Clerk
+
+### Background Jobs
+- Inngest
+
+### Deployment
+- Railway (Backend)
+- Vercel (Frontend)
 
 ---
 
-## 📜 License <a name="-license"></a>
+## ⚙️ Architecture
 
-This project is licensed under the MIT License. See the [LICENSE.md](./LICENSE.md) file for details.
+```text
+User → Clerk Auth → Webhooks → Inngest → Backend → Database (Prisma + PostgreSQL)
