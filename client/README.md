@@ -77,51 +77,107 @@ Designed to manage workspaces, projects, tasks, and team collaboration efficient
 ---
 
 ## ⚙️ Architecture
-Clerk handles authentication
-Webhooks trigger events
-Inngest processes background jobs
-Backend updates database
-Frontend reflects real-time changes
-🚀 Getting Started
-1️⃣ Clone Repository
+
+The system follows an **event-driven architecture** powered by Clerk, Inngest, and Prisma.
+
+**Flow:**
+
+* User interacts with the frontend
+* Clerk handles authentication
+* Clerk triggers webhooks
+* Inngest processes background jobs
+* Backend updates the database (PostgreSQL via Prisma)
+* Frontend reflects real-time updates
+
+```text
+User → Clerk Auth → Webhooks → Inngest → Backend → Database
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/your-username/project-management.git
 cd project-management
-2️⃣ Install Dependencies
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
 npm install
-3️⃣ Setup Environment Variables
+```
 
-Create a .env file:
+---
 
+### 3️⃣ Setup Environment Variables
+
+Create a `.env` file in the root:
+
+```env
 DATABASE_URL=your_database_url
 CLERK_SECRET_KEY=your_clerk_secret_key
 CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
 INNGEST_EVENT_KEY=your_inngest_event_key
-4️⃣ Run Backend
+```
+
+---
+
+### 4️⃣ Run Backend Server
+
+```bash
 npm run server
-5️⃣ Run Frontend
+```
+
+---
+
+### 5️⃣ Run Frontend
+
+```bash
 cd client
 npm run dev
-6️⃣ Open in Browser
+```
+
+---
+
+### 6️⃣ Open in Browser
+
+```
 http://localhost:5173
-🌐 Deployment
-Backend → Railway
-Frontend → Vercel
-Inngest endpoint → /api/inngest
-📌 Highlights
-⚡ Event-driven architecture using Inngest
-🔐 Secure authentication with Clerk
-📦 Scalable backend with Prisma ORM
-🚀 Full-stack production-ready deployment
-🔄 Real-time data synchronization
-🤝 Contributing
+```
+
+---
+
+## 🌐 Deployment
+
+* **Backend:** Railway
+* **Frontend:** Vercel
+* **Inngest Endpoint:** `/api/inngest`
+
+---
+
+## 📌 Highlights
+
+* ⚡ Event-driven architecture using Inngest
+* 🔐 Secure authentication with Clerk
+* 📦 Scalable backend with Prisma ORM
+* 🚀 Full-stack production-ready deployment
+* 🔄 Real-time data synchronization
+
+---
+
+## 🤝 Contributing
 
 Contributions are welcome!
-Feel free to fork the repo and submit a pull request.
-<div align="center">
+
+* Fork the repository
+* Create a new branch
+* Submit a pull request
+
+---
 
 ⭐ If you found this project helpful, consider giving it a star!
-
-</div> ```
-
-```text
-User → Clerk Auth → Webhooks → Inngest → Backend → Database (Prisma + PostgreSQL)
