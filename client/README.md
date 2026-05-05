@@ -77,6 +77,51 @@ Designed to manage workspaces, projects, tasks, and team collaboration efficient
 ---
 
 ## ⚙️ Architecture
+Clerk handles authentication
+Webhooks trigger events
+Inngest processes background jobs
+Backend updates database
+Frontend reflects real-time changes
+🚀 Getting Started
+1️⃣ Clone Repository
+git clone https://github.com/your-username/project-management.git
+cd project-management
+2️⃣ Install Dependencies
+npm install
+3️⃣ Setup Environment Variables
+
+Create a .env file:
+
+DATABASE_URL=your_database_url
+CLERK_SECRET_KEY=your_clerk_secret_key
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+INNGEST_EVENT_KEY=your_inngest_event_key
+4️⃣ Run Backend
+npm run server
+5️⃣ Run Frontend
+cd client
+npm run dev
+6️⃣ Open in Browser
+http://localhost:5173
+🌐 Deployment
+Backend → Railway
+Frontend → Vercel
+Inngest endpoint → /api/inngest
+📌 Highlights
+⚡ Event-driven architecture using Inngest
+🔐 Secure authentication with Clerk
+📦 Scalable backend with Prisma ORM
+🚀 Full-stack production-ready deployment
+🔄 Real-time data synchronization
+🤝 Contributing
+
+Contributions are welcome!
+Feel free to fork the repo and submit a pull request.
+<div align="center">
+
+⭐ If you found this project helpful, consider giving it a star!
+
+</div> ```
 
 ```text
 User → Clerk Auth → Webhooks → Inngest → Backend → Database (Prisma + PostgreSQL)
